@@ -46,11 +46,11 @@ namespace CoreEscuela.Entidades {
                 new Curso(){Nombre="401", Jornada=TiposJornada.Tarde},
                 new Curso(){Nombre="501", Jornada=TiposJornada.Tarde},
             };
-
+//random
             Random rdn = new Random();
             foreach (var curso in Escuela.Cursos)
             {
-                int cantRandom = rdn.Next(5,15);
+                int cantRandom = rdn.Next(5,20);
                 curso.Alumno = GenerarAlumnosAlazar(cantRandom);
             }
             foreach (var curso in Escuela.Cursos)
