@@ -50,7 +50,7 @@ namespace CoreEscuela.Entidades {
             Random rdn = new Random();
             foreach (var curso in Escuela.Cursos)
             {
-                int cantRandom = rdn.Next(5,20);
+                int cantRandom = rdn.Next(5,15);
                 curso.Alumno = GenerarAlumnosAlazar(cantRandom);
             }
             foreach (var curso in Escuela.Cursos)
