@@ -6,7 +6,5 @@ namespace CoreEscuela.Entidades
         Tarde, 
         Noche,
 
-        bala,
-        
     }
 }   
