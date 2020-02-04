@@ -9,3 +9,8 @@ C:\Users\XGAnalista2\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfoInputs.ca
 C:\Users\XGAnalista2\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfo.cs
 C:\Users\XGAnalista2\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.dll
 C:\Users\XGAnalista2\Etapa1\obj\Debug\netcoreapp3.1\Etapa1.pdb
+c:\Users\USER\Escuela\obj\Debug\netcoreapp3.1\Etapa1.csprojAssemblyReference.cache
+c:\Users\USER\Escuela\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfoInputs.cache
+c:\Users\USER\Escuela\obj\Debug\netcoreapp3.1\Etapa1.AssemblyInfo.cs
+c:\Users\USER\Escuela\obj\Debug\netcoreapp3.1\Etapa1.dll
+c:\Users\USER\Escuela\obj\Debug\netcoreapp3.1\Etapa1.pdb
