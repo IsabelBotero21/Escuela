@@ -20,8 +20,6 @@ namespace CoreEscuela
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
             Printer.WriteTitle("Cursos de la Escuela");
-
-
             foreach (var curso in escuela.Cursos)
             {
                 WriteLine($"Nombre:{curso.Nombre}, Id: {curso.UniqueId}");
