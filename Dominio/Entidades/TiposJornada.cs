@@ -5,6 +5,8 @@ namespace CoreEscuela.Entidades
         Manana,
         Tarde, 
         Noche,
+
+        bala,
         
     }
 }   
