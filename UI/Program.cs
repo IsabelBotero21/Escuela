@@ -5,6 +5,7 @@ using CoreEscuela.Entidades;
 using System.Collections.Generic;
 using CoreEscuela.Util;
 using Etapa1.UI;
+using Etapa1.Dominio;
 
 namespace CoreEscuela.Entidades
 {
@@ -14,8 +15,8 @@ namespace CoreEscuela.Entidades
         {
             var formularioSN = new FormularioSolicitudNotas();
             formularioSN.Inicializar();
-            var engine = new EscuelaEngine();
-            engine.Inicializar();
+            var engine = new EscuelaFabrica();
+            engine.FabricarEscuela();
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             Printer.Beep(10000, Cantidad: 10);
             ImprimirCursosEscuela(engine.Escuela);

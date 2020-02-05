@@ -5,6 +5,8 @@ namespace Etapa1.UI
       public void Inicializar() {
 // TODO: Imprimir nota mas alta
 // TODO: Imprimir promedio de notas
+
+
       }
-    }
+    } 
 }

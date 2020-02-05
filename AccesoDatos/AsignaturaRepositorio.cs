@@ -6,12 +6,12 @@ namespace Etapa1.AccesoDatos
 {
     public class AsignaturaRepositorio
     {
-          private List<Asignatura> ObtenerAsignatura(Curso curso)
+         public List<Asignatura> ObtenerAsignatura(int cantidad = 5)
         {
             string[] A1 = { "Matemáticas", "Ed fisica", "Castellano", "Ciencias", "Inglés" };
             var ListaAsignaturas = from a1 in A1
                                    select new Asignatura { Nombre = $"{a1}" };
-            return ListaAsignaturas.OrderBy((asig) => asig.UniqueId).ToList();
+            return ListaAsignaturas.OrderBy((asig) => asig.UniqueId).Take(cantidad).ToList();
         }
 
     }

@@ -6,7 +6,7 @@ namespace Etapa1.AccesoDatos
 {
     public class AlumnoRepositorio
     {
-        private List<Alumno> ObtenerAlumno(Curso curso)
+       public List<Alumno> ObtenerAlumno(int cantidad)
         {
             string[] nombre1 = { "Ana", "Fabiola", "Sara", "Enriqueta", "Marisol", "Tatiana", "Paola" };
             string[] apellido1 = { "Torres", "Sarmiento", "Lopez", "Restrepo", "Castro", "Vanegas", "Llanos" };
@@ -15,7 +15,7 @@ namespace Etapa1.AccesoDatos
                                from n2 in nombre2
                                from a1 in apellido1
                                select new Alumno { Nombre = $"{n1} {n2} {a1}" };
-            return ListaAlumnos.OrderBy((al) => al.UniqueId).ToList();
+            return ListaAlumnos.OrderBy((al) => al.UniqueId).Take(cantidad).ToList();
         }
     }
 }
