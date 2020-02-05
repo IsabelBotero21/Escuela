@@ -5,7 +5,7 @@ using CoreEscuela.Entidades;
 using System.Collections.Generic;
 using CoreEscuela.Util;
 
-namespace CoreEscuela
+namespace CoreEscuela.Entidades
 {
     class Program
     {
