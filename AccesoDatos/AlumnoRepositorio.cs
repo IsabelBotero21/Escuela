@@ -4,9 +4,9 @@ using CoreEscuela.Entidades;
 
 namespace Etapa1.AccesoDatos
 {
-    public class EstudiantesRepositorio
+    public class AlumnoRepositorio
     {
-        private List<Alumno> GenerarAlumnosAlazar(Curso curso)
+        private List<Alumno> ObtenerAlumno(Curso curso)
         {
             string[] nombre1 = { "Ana", "Fabiola", "Sara", "Enriqueta", "Marisol", "Tatiana", "Paola" };
             string[] apellido1 = { "Torres", "Sarmiento", "Lopez", "Restrepo", "Castro", "Vanegas", "Llanos" };
