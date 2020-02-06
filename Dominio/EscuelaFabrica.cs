@@ -29,6 +29,7 @@ namespace Etapa1.Dominio
                     curso.Alumno = obtenerAlumno.ObtenerAlumno(cantRandom);
                 }
             }
+
             void CurAsignatura()
             {
                 foreach (var curso in Escuela.Cursos)
@@ -61,15 +62,12 @@ namespace Etapa1.Dominio
                                 };
                                 alumno.Evaluacion.Add(evaluacion);
                             }
-
                         }
                     }
                 }
             }
             return Escuela;
         }
-
-
     }
 }
 
