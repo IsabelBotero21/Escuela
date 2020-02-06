@@ -20,7 +20,7 @@ namespace CoreEscuela.Entidades
         public List<Curso> Cursos { get; internal set; }
 
         public Escuela (string nombre, int año) => (Nombre, AñoCreacion) = (nombre, año);
-
+        //constructor de escuela
         public Escuela (string nombre, int año, TiposEscuela tipo, string Pais="", string Ciudad="")
         {
            (Nombre, AñoCreacion) = (nombre, año);
