@@ -26,8 +26,6 @@ namespace Etapa1.Dominio
             });
             return notaMasAlta;
         }
-
-
         public float CalcularPromedioNotas(Escuela escuela)
         {
             float Promedio = 0;
