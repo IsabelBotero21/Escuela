@@ -20,6 +20,7 @@ namespace CoreEscuela.Entidades
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             Printer.Beep(10000, Cantidad: 10);
             ImprimirCursosEscuela(engine.Escuela);
+
         }
 
         private static void FormularioSolicitudNotas()

@@ -2,37 +2,49 @@ using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using Etapa1.AccesoDatos;
 
-namespace Etapa1.Dominio {
-    public class CalculadorNotas {
+namespace Etapa1.Dominio
+{
+    public class CalculadorNotas
+    {
         public Escuela Escuela { get; set; }
-        private float CalcularNotaMasAlta (Escuela escuela) {
+        public float CalcularNotaMasAlta(Escuela escuela)
+        {
             float notaMasAlta = 0;
-            Escuela.Cursos.ForEach (Curso => {
-                Curso.Alumno.ForEach (Alumno =>
-                 {
-                    Alumno.Evaluacion.ForEach(Evaluacion =>
-                    {
-                    if (Evaluacion.Nota
-                        > notaMasAlta) {
-                        notaMasAlta = Evaluacion.Nota;
-                    };
+            escuela.Cursos.ForEach(curso =>
+            {
+                curso.Alumno.ForEach(alumno =>
+                {
+                    alumno.Evaluacion.ForEach(evaluacion =>
+                            {
+                                if (evaluacion.Nota
+                                 > notaMasAlta)
+                                {
+                                    notaMasAlta = evaluacion.Nota;
+                                };
+                            });
                 });
             });
-             });
             return notaMasAlta;
-
         }
-        private double CalcularPromedioNotas (Curso curso) {
-   double Promedio = 0;
-            Escuela.Cursos.ForEach (Curso => {
-                Curso.Alumno.ForEach (Alumno => {
-                    Alumno.Evaluacion.ForEach (Evaluacion => {
-                        Promedio = Evaluacion.Nota / 5;
+
+
+        public float CalcularPromedioNotas(Escuela escuela)
+        {
+            float Promedio = 0;
+            escuela.Cursos.ForEach(curso =>
+            {
+                curso.Alumno.ForEach(alumno =>
+                {
+                    alumno.Evaluacion.ForEach(evaluacion =>
+                    {
+                        Promedio = evaluacion.Nota / 5;
                     });
                 });
-          
+
             });
-           return Promedio; 
+            return Promedio;
         }
     }
 }
+
+

@@ -20,6 +20,7 @@ namespace CoreEscuela.Util
                while (Cantidad-- > 0)
                {
                    System.Console.Beep(Hz, Tiempo);
+                
                }
             }
     } 
