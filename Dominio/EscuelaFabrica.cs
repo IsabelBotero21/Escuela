@@ -52,7 +52,6 @@ namespace Etapa1.Dominio
                             {
                                 var notaSinAproximar = (float)(5 * rd.NextDouble());
                                 var evaluacionRepositorio = new EvaluacionRepositorio();
-                                evaluacionRepositorio.ObtenerEvaluacion();
 
                                 var evaluacion = new Evaluacion
                                 {
@@ -61,12 +60,6 @@ namespace Etapa1.Dominio
                                     Nota = (float)Math.Round(notaSinAproximar, 2)
                                 };
                                 alumno.Evaluacion.Add(evaluacion);
-                                
-                            var calcuNota = new CalculadorNotas();
-                            calcuNota.CalcularNotaMasAlta(Escuela);
-
-                             var calcuProm = new CalculadorNotas();
-                            calcuProm.CalcularPromedioNotas(Escuela);
                             }
                         }
                     }

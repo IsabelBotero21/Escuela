@@ -26,21 +26,42 @@ namespace Etapa1.Dominio
             });
             return notaMasAlta;
         }
+        public float CalcularNotaMenor(Escuela escuela)
+        {
+            float menorNota = 5;
+            escuela.Cursos.ForEach(curso =>
+            {
+                curso.Alumno.ForEach(alumno =>
+                {
+                    alumno.Evaluacion.ForEach(evaluacion =>
+                            {
+                                if (evaluacion.Nota
+                                 < menorNota)
+                                {
+                                    menorNota = evaluacion.Nota;
+                                };
+                            });
+                });
+            });
+            return menorNota;
+        }
         public float CalcularPromedioNotas(Escuela escuela)
         {
-            float Promedio = 0;
+            float sumatoriaNota = 0;
+            float contadorNotas = 0;
             escuela.Cursos.ForEach(curso =>
             {
                 curso.Alumno.ForEach(alumno =>
                 {
                     alumno.Evaluacion.ForEach(evaluacion =>
                     {
-                        Promedio = evaluacion.Nota / 5;
+                        sumatoriaNota += evaluacion.Nota;
+                        contadorNotas++;
                     });
                 });
 
             });
-            return Promedio;
+            return sumatoriaNota / contadorNotas;
         }
     }
 }
