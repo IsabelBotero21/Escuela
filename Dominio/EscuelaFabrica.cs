@@ -38,7 +38,7 @@ namespace Etapa1.Dominio
                     curso.Asignatura = obtenerAsignatura.ObtenerAsignatura();
                 }
             }
-            void CurEvaluacion()
+           void CurEvaluacion()
             {
                 foreach (var curso in Escuela.Cursos)
                 {
