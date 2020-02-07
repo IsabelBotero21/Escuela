@@ -13,5 +13,5 @@ namespace Etapa1.AccesoDatos
                                     select new Evaluacion { Nombre = $"{n1}" };
             return ListaEvaluaciones.OrderBy((Eva) => Eva.UniqueId).Take(cantidad).ToList().First().Nombre;
         }
-    }
+    } 
 }

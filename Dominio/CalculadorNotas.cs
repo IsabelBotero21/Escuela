@@ -2,34 +2,37 @@ using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using Etapa1.AccesoDatos;
 
-namespace Etapa1.Dominio
-{
-    public class CalculadorNotas
-    {
+namespace Etapa1.Dominio {
+    public class CalculadorNotas {
         public Escuela Escuela { get; set; }
-        private void CalcularNotaMasAlta(Curso curso)
-        {
-
-            foreach (var cur in Escuela.Cursos)
-            {
-                foreach (var asignatura in curso.Asignatura)
-                {
-                    foreach (var alumno in curso.Alumno)
+        private float CalcularNotaMasAlta (Escuela escuela) {
+            float notaMasAlta = 0;
+            Escuela.Cursos.ForEach (Curso => {
+                Curso.Alumno.ForEach (Alumno =>
+                 {
+                    Alumno.Evaluacion.ForEach(Evaluacion =>
                     {
-                        alumno.Evaluacion = new List<Evaluacion>();
-
-                    }
-
-                }
-            }
+                    if (Evaluacion.Nota
+                        > notaMasAlta) {
+                        notaMasAlta = Evaluacion.Nota;
+                    };
+                });
+            });
+             });
+            return notaMasAlta;
 
         }
-        private void CalcularPromedioNotas(Curso curso)
-        {
-
-
-
+        private double CalcularPromedioNotas (Curso curso) {
+   double Promedio = 0;
+            Escuela.Cursos.ForEach (Curso => {
+                Curso.Alumno.ForEach (Alumno => {
+                    Alumno.Evaluacion.ForEach (Evaluacion => {
+                        Promedio = Evaluacion.Nota / 5;
+                    });
+                });
+          
+            });
+           return Promedio; 
         }
     }
-
 }
