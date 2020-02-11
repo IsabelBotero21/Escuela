@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CoreEscuela.Entidades;
 using Etapa1.AccesoDatos;
@@ -45,6 +46,8 @@ namespace Etapa1.Dominio
             });
             return menorNota;
         }
+
+
         public float CalcularPromedioNotas(Escuela escuela)
         {
             float sumatoriaNota = 0;
@@ -63,7 +66,57 @@ namespace Etapa1.Dominio
             });
             return sumatoriaNota / contadorNotas;
         }
+        public void CalcularModaNota(Escuela escuela)
+        {
+
+            var array = new List<float>();
+            escuela.Cursos.ForEach(curso =>
+                   {
+                       curso.Alumno.ForEach(alumno =>
+                       {
+                           alumno.Evaluacion.ForEach(evaluacion =>
+                           {
+                               array.Add(evaluacion.Nota);
+                           });
+                       });
+                   });
+        }
+
+        public float CalcularModa(Array)
+        {
+            float moda = 0;
+            float repeticionesNumero = 0;
+            float repeticionesNumeroMayor = 0;
+            for (int i = 0; i < array.Count; i++)
+            {
+                repeticionesNumero = 0;
+
+
+                for (int j = 0; j < array.Count; j++)
+                {
+
+                    if (array[j] == array[i])
+                    {
+                        repeticionesNumero++;
+                    }
+
+                    if (j == array.Count - 1)
+                    {
+                        if (repeticionesNumero > repeticionesNumeroMayor)
+                        {
+                            moda = array[i];
+                            repeticionesNumeroMayor = repeticionesNumero;
+                        }
+                    }
+                }
+            }
+            return moda;
+
+        }
     }
 }
+
+
+
 
 

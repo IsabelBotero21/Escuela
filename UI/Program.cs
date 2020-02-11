@@ -20,12 +20,14 @@ namespace CoreEscuela.Entidades
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             Printer.Beep(10000, Cantidad: 10);
             ImprimirCursosEscuela(engine.Escuela);
-              Printer.WriteTitle("Nota mas alta");
+            Printer.WriteTitle("Nota mas alta");
             WriteLine(new CalculadorNotas().CalcularNotaMasAlta(engine.Escuela));
-              Printer.WriteTitle("Nota menor");
+            Printer.WriteTitle("Nota menor");
             WriteLine(new CalculadorNotas().CalcularNotaMenor(engine.Escuela));
-              Printer.WriteTitle("Promedio");
+            Printer.WriteTitle("Promedio");
             WriteLine(new CalculadorNotas().CalcularPromedioNotas(engine.Escuela));
+              Printer.WriteTitle("Moda");
+            WriteLine(new CalculadorNotas().CalcularModa(engine.Escuela));
         }
 
         private static void FormularioSolicitudNotas()
