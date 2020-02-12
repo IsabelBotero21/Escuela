@@ -7,6 +7,7 @@ using CoreEscuela.Util;
 using Etapa1.UI;
 using Etapa1.Dominio;
 
+
 namespace CoreEscuela.Entidades
 {
     class Program
@@ -26,10 +27,8 @@ namespace CoreEscuela.Entidades
             WriteLine(new CalculadorNotas().CalcularNotaMenor(engine.Escuela));
             Printer.WriteTitle("Promedio");
             WriteLine(new CalculadorNotas().CalcularPromedioNotas(engine.Escuela));
-              Printer.WriteTitle("Moda");
-            WriteLine(new CalculadorNotas().CalcularModa(engine.Escuela));
+            WriteLine(new CalculadorNotas().CalcularModaNota(engine.Escuela));
         }
-
         private static void FormularioSolicitudNotas()
         {
             throw new NotImplementedException();

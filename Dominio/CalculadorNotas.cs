@@ -47,7 +47,6 @@ namespace Etapa1.Dominio
             return menorNota;
         }
 
-
         public float CalcularPromedioNotas(Escuela escuela)
         {
             float sumatoriaNota = 0;
@@ -66,7 +65,7 @@ namespace Etapa1.Dominio
             });
             return sumatoriaNota / contadorNotas;
         }
-        public void CalcularModaNota(Escuela escuela)
+        public float CalcularModaNota(Escuela escuela)
         {
 
             var array = new List<float>();
@@ -80,9 +79,10 @@ namespace Etapa1.Dominio
                            });
                        });
                    });
-        }
 
-        public float CalcularModa(Array)
+            return CalcularModa(array);
+        }
+        private float CalcularModa(List<float> array)
         {
             float moda = 0;
             float repeticionesNumero = 0;
@@ -90,8 +90,6 @@ namespace Etapa1.Dominio
             for (int i = 0; i < array.Count; i++)
             {
                 repeticionesNumero = 0;
-
-
                 for (int j = 0; j < array.Count; j++)
                 {
 
@@ -111,7 +109,6 @@ namespace Etapa1.Dominio
                 }
             }
             return moda;
-
         }
     }
 }
