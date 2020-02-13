@@ -27,7 +27,12 @@ namespace CoreEscuela.Entidades
             WriteLine(new CalculadorNotas().CalcularNotaMenor(engine.Escuela));
             Printer.WriteTitle("Promedio");
             WriteLine(new CalculadorNotas().CalcularPromedioNotas(engine.Escuela));
+            Printer.WriteTitle("Moda");
             WriteLine(new CalculadorNotas().CalcularModaNota(engine.Escuela));
+            Printer.WriteTitle("Alumno con mayor nota");
+            WriteLine(new AlumnoServicio().alumnoMayorNota(engine.Escuela));
+            Printer.WriteTitle("Rango de notas ");
+            WriteLine(new AlumnoServicio().rangoNota(engine.Escuela));
         }
         private static void FormularioSolicitudNotas()
         {
