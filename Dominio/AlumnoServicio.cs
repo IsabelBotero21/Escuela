@@ -1,23 +1,17 @@
 using System.Collections.Generic;
 using CoreEscuela.Entidades;
-
 namespace Etapa1.Dominio {
     public class AlumnoServicio {
         //Traer alumnos
-        public Alumno alumnoMayorNota(Escuela escuela)
-        {
-     var alumnoConMayorNota =new Alumno();
+        public Alumno alumnoMayorNota (Escuela escuela) {
+            var alumnoConMayorNota = new Alumno ();
             float notaMasAlta = 0;
-            var almacenarAlum = new List<Alumno>();
-            escuela.Cursos.ForEach(curso =>
-            {
-                curso.Alumno.ForEach(alumno =>
-                {
-                    alumno.Evaluacion.ForEach(evaluacion =>
-                    {
-                        almacenarAlum.Add(alumno);
-                        if (evaluacion.Nota > notaMasAlta)
-                        {
+            var almacenarAlum = new List<Alumno> ();
+            escuela.Cursos.ForEach (curso => {
+                curso.Alumno.ForEach (alumno => {
+                    alumno.Evaluacion.ForEach (evaluacion => {
+                        almacenarAlum.Add (alumno);
+                        if (evaluacion.Nota > notaMasAlta) {
                             notaMasAlta = evaluacion.Nota;
                             alumnoConMayorNota = alumno;
                         }
@@ -26,22 +20,29 @@ namespace Etapa1.Dominio {
             });
             return alumnoConMayorNota;
         }
-        
-             public float rangoNota (Escuela escuela) {
+        public List<Alumno> rangoNota (Escuela escuela) {
             float alumnoRango;
-            var rango = new List<Alumno> ();
+            float sumatoriaNota = 0;
+            float contadorNotas = 0;
+            float prom = 0;
+            var alumnosEnRango = new List<Alumno> ();
             escuela.Cursos.ForEach (curso => {
                 curso.Alumno.ForEach (alumno => {
                     alumno.Evaluacion.ForEach (evaluacion => {
-                        if ((evaluacion.Nota>=3)&&(evaluacion.Nota<5))
-                        {
-                            alumnoRango = evaluacion.Nota;
-                            rango.Add(alumno);
-                        }
-                     });
+                        sumatoriaNota += evaluacion.Nota;
+                        contadorNotas++;
+                        sumatoriaNota = 0;
+                        contadorNotas = 0;
+                        prom = 0;
+                    });
+                    prom = sumatoriaNota / contadorNotas;
+                    if ((prom >= 1) && (prom < 5)) {
+                        alumnoRango = prom;
+                        alumnosEnRango.Add (alumno);
+                    }
                 });
             });
-            return rangoNota(escuela);
+            return alumnosEnRango;
         }
     }
 }
