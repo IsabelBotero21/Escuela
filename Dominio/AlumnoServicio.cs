@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CoreEscuela.Entidades;
 namespace Etapa1.Dominio {
@@ -44,5 +45,18 @@ namespace Etapa1.Dominio {
             });
             return alumnosEnRango;
         }
+
+        public List<Alumno> AlumnoPalabra (Escuela escuela, char a) {
+            var alumnosPalabra = new List<Alumno> ();
+            escuela.Cursos.ForEach (curso => {
+                curso.Alumno.ForEach (alumno => {
+                    char[] alumnosPalabra = { 'A', 'B', 'C' };
+
+                });
+            });
+            return alumnosPalabra;
+
+        }
+
     }
 }
